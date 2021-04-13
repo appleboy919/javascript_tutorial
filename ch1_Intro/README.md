@@ -18,3 +18,30 @@
 5. Babel, npm, WebPack, Gulp: build tools and infrastructure to automate the process of optimizing human-readable JS for the best browser performance
 6. Node.js: JS server runtime used to run JS everywhere; used to run npm, WebPack, Babel, and more on computers
    - JS migrated from browser to server
+
+---
+
+## Running JavaScript
+
+- JavaScript can be in HTML with _\<script\>_ tag --> usually placed at the end of the documents (bcs. everything stops when JavaScript is encountered) **==> NOT A MODERN WAY**
+- JS as 'external file':
+
+```HTML
+(Example)
+
+<!-- Reference external JS file -->
+<script src="script.js"></script>
+```
+
+- this can cause significant issues when JS is referenced before the elements it's acting upon have been rendered
+- **(Modern)** _async, defer keywords_:
+
+  - _async_ allows the browser to **keep parsing HTML while downloading JS file** (download end -> stop parsing & execute JS file -> continue parsing)
+  - _defer_ allows the browser to **load JS file alongside HTML and execute the files after parsing is done**
+
+  ```HTML
+  (Example)
+
+  <!-- use defer keyword -->
+  <script src="script.js" defer></script>
+  ```
